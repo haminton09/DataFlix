@@ -1,4 +1,4 @@
-# 🎬 DATAFLIX - Proyecto SQL + ETL
+# 🎬 DATAFLIX - Proyecto SQL
 
 
 # DataFlix
