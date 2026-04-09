@@ -41,6 +41,158 @@ Tablas principales:
 
 ---
 
+## 🎬 Movies (Películas)
+
+**Descripción:**
+Almacena la información principal de las películas.
+
+| Columna         | Tipo          | Descripción           | Restricciones |
+| --------------- | ------------- | --------------------- | ------------- |
+| id              | VARCHAR2(20)  | Identificador único   | PK            |
+| title           | VARCHAR2(255) | Título de la película | INDEX         |
+| release_year    | NUMBER        | Año de estreno        | -             |
+| runtime_minutes | NUMBER        | Duración en minutos   | -             |
+
+---
+
+## 👤 People (Personas)
+
+**Descripción:**
+Contiene información de actores, directores y participantes.
+
+| Columna    | Tipo          | Descripción          | Restricciones |
+| ---------- | ------------- | -------------------- | ------------- |
+| id         | VARCHAR2(20)  | Identificador único  | PK            |
+| name       | VARCHAR2(255) | Nombre de la persona | -             |
+| birth_year | NUMBER        | Año de nacimiento    | -             |
+
+---
+
+## 🎭 Movie Participation (Participación)
+
+**Descripción:**
+Relaciona películas con personas y su rol.
+
+| Columna   | Tipo         | Descripción                 | Restricciones |
+| --------- | ------------ | --------------------------- | ------------- |
+| movie_id  | VARCHAR2(20) | Película                    | PK, FK        |
+| person_id | VARCHAR2(20) | Persona                     | PK, FK        |
+| role      | VARCHAR2(50) | Rol (actor, director, etc.) | -             |
+
+---
+
+## 🎞 Genres (Géneros)
+
+**Descripción:**
+Lista de géneros cinematográficos.
+
+| Columna | Tipo          | Descripción       | Restricciones |
+| ------- | ------------- | ----------------- | ------------- |
+| id      | NUMBER        | Identificador     | PK            |
+| name    | VARCHAR2(100) | Nombre del género | -             |
+
+---
+
+## 🎬 Movie Genres
+
+**Descripción:**
+Relaciona películas con sus géneros.
+
+| Columna  | Tipo         | Descripción | Restricciones |
+| -------- | ------------ | ----------- | ------------- |
+| movie_id | VARCHAR2(20) | Película    | PK, FK        |
+| genre_id | NUMBER       | Género      | PK, FK        |
+
+---
+
+## ⭐ Ratings (Calificaciones)
+
+**Descripción:**
+Almacena la puntuación de cada película.
+
+| Columna        | Tipo         | Descripción           | Restricciones |
+| -------------- | ------------ | --------------------- | ------------- |
+| movie_id       | VARCHAR2(20) | Película              | PK, FK        |
+| average_rating | NUMBER(3,1)  | Calificación promedio | -             |
+| vote_count     | NUMBER       | Número de votos       | -             |
+
+---
+
+## 📅 Releases (Lanzamientos)
+
+**Descripción:**
+Contiene la fecha de estreno y si es un lanzamiento reciente.
+
+| Columna      | Tipo         | Descripción              | Restricciones |
+| ------------ | ------------ | ------------------------ | ------------- |
+| movie_id     | VARCHAR2(20) | Película                 | PK, FK        |
+| release_date | DATE         | Fecha de estreno         | -             |
+| is_new       | NUMBER(1)    | Indica si es nueva (1/0) | -             |
+
+---
+
+## 🤖 Recommendations (Recomendaciones)
+
+**Descripción:**
+Películas recomendadas según un puntaje.
+
+| Columna  | Tipo          | Descripción              | Restricciones |
+| -------- | ------------- | ------------------------ | ------------- |
+| id       | NUMBER        | Identificador            | PK            |
+| movie_id | VARCHAR2(20)  | Película                 | FK            |
+| score    | NUMBER(5,2)   | Puntaje de recomendación | INDEX         |
+| reason   | VARCHAR2(100) | Motivo                   | -             |
+
+---
+
+## 📚 Lists (Listas)
+
+**Descripción:**
+Define colecciones de películas (ej: Top 10, Tendencias).
+
+| Columna     | Tipo          | Descripción        | Restricciones |
+| ----------- | ------------- | ------------------ | ------------- |
+| id          | NUMBER        | Identificador      | PK            |
+| name        | VARCHAR2(100) | Nombre de la lista | -             |
+| description | VARCHAR2(255) | Descripción        | -             |
+
+---
+
+## 📌 List Items
+
+**Descripción:**
+Asocia películas a listas con un orden.
+
+| Columna  | Tipo         | Descripción          | Restricciones |
+| -------- | ------------ | -------------------- | ------------- |
+| list_id  | NUMBER       | Lista                | PK, FK        |
+| movie_id | VARCHAR2(20) | Película             | PK, FK        |
+| position | NUMBER       | Posición en la lista | -             |
+
+---
+
+## 📈 Trends (Tendencias)
+
+**Descripción:**
+Registra el ranking de popularidad por fecha.
+
+| Columna    | Tipo         | Descripción         | Restricciones |
+| ---------- | ------------ | ------------------- | ------------- |
+| movie_id   | VARCHAR2(20) | Película            | PK, FK        |
+| trend_date | DATE         | Fecha               | PK            |
+| ranking    | NUMBER       | Posición en ranking | -             |
+
+---
+
+## 🚀 Índices
+
+* idx_movies_title → Búsqueda por título
+* idx_ratings_score → Ordenar por calificación
+* idx_trends_date → Consultas por fecha
+* idx_recommendations_score → Ranking de recomendaciones
+
+---
+
 ## 🔐 Restricciones
 
 * Claves primarias y foráneas
