@@ -18,11 +18,11 @@ DATAFLIX es un sistema de gestión de películas inspirado en Netflix, desarroll
 
 Se descargaron datasets desde IMDb en formato `.tsv`.
 
-## IMDb Data Files Available for Download
-*https://datasets.imdbws.com/
+### IMDb Data Files Available for Download
+https://datasets.imdbws.com/
 
-title.basics.tsv.gz
-name.basics.tsv.gz
+title.basics.tsv.gz - movies
+name.basics.tsv.gz  - people
 
 
 ### Transform
@@ -31,6 +31,9 @@ name.basics.tsv.gz
 * Conversión de tipos
 * Eliminación de valores inválidos
 * Conversión de TSV a CSV
+
+Python - Pandas
+https://github.com/haminton09/DataFlix/blob/47ea61c2bbb7689b8041726e899500f082d1fd0d/ETL.py
 
 ### Load
 
