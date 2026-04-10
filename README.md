@@ -38,7 +38,8 @@ https://github.com/haminton09/DataFlix/blob/47ea61c2bbb7689b8041726e899500f082d1
 ### Load
 
 * Importación de datos a Oracle usando SQL Developer
-
+  
+https://github.com/haminton09/DataFlix/blob/bd9d9572f640ac4f7a86f157d5a03cdacba0f005/DataFlix.sql
 ---
 
 ## 🧱 Modelo de Datos
