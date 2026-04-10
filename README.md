@@ -40,8 +40,10 @@ Tablas principales:
 * movie_people
 
 ---
+
+# Modelo ERD
 ![image alt](https://github.com/haminton09/DataFlix/blob/673f5b81a1a0753da40ffd30734bfae1f8d01040/Dataflix_Logical.png)
-![image alt](https://github.com/haminton09/DataFlix/blob/673f5b81a1a0753da40ffd30734bfae1f8d01040/DataFlix_schem.png)
+*https://github.com/haminton09/DataFlix/blob/39810fbc32ec06cf26ad60c5298d1c2f99aba6d5/Diagrama_Dataflix.pdf
 
 ## 🎬 Movies (Películas)
 
