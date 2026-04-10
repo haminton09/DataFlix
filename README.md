@@ -40,6 +40,8 @@ Tablas principales:
 * movie_people
 
 ---
+![image alt](https://github.com/haminton09/DataFlix/blob/673f5b81a1a0753da40ffd30734bfae1f8d01040/Dataflix_Logical.png)
+![image alt](https://github.com/haminton09/DataFlix/blob/673f5b81a1a0753da40ffd30734bfae1f8d01040/DataFlix_schem.png)
 
 ## 🎬 Movies (Películas)
 
